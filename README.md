@@ -20,24 +20,35 @@ All the problems of Apriori can be solved by leveraging the FP tree. To be more
 
 ## Introduction to FP-Growth
 
-![shortcomings](images/Slide6.PNG)
+![fp_growth](images/Slide6.PNG)
 
-FP-growth is an improved version of the Apriori Algorithm which is widely used for frequent pattern mining(AKA Association Rule Mining). It is used as an analytical process that finds frequent patterns or associations from data sets. For example, grocery store transaction data might have a frequent pattern that people usually buy chips and beer together. The Apriori Algorithm produces frequent patterns by generating itemsets and discovering the most frequent itemset over a threshold “minimal support count”. It greatly reduces the size of the itemset in the database by one simple principle:
-If an itemset is frequent, then all of its subsets must also be frequent.
+FP-growth is an improved version of the Apriori Algorithm which is widely used for frequent pattern mining(AKA Association Rule Mining). It is used as an analytical process that finds frequent patterns or associations from data sets. For example, grocery store transaction data might have a frequent pattern that people usually buy chips and beer together. The Apriori Algorithm produces frequent patterns by generating itemsets and discovering the most frequent itemset over a threshold “minimal support count”. It greatly reduces the size of the itemset in the database by one simple principle: **If an itemset is frequent, then all of its subsets must also be frequent**.
 However, the Apriori Algorithm has a major shortfall. Using Apriori required multiple scans of the database to check the support count of each item and itemsets. When the database is huge, this will cost a significant amount of disk I/O and computing power. Therefore the FP-Growth algorithm is created to overcome this shortfall. It only scans the database twice and used a tree structure(FP-tree) to store all the information. The root represents null, each node represents an item, while the association of the nodes is the itemsets with the order maintained while forming the tree. The FP-tree is concise and is used to directly generating large itemsets. Once an FP-tree has been constructed, it uses a recursive divide-and-conquer approach to mine the frequent itemsets.
 
-![shortcomings](images/Slide7.PNG)
+![fp_tree](images/Slide7.PNG)
 
 FP tree is the core concept of the whole FP Growth algorithm. Briefly speaking, the FP tree is the compressed representation of the itemset database. The tree structure not only reserves the itemset in DB but also keeps track of the association between itemsets
 The tree is constructed by taking each itemset and mapping it to a path in the tree one at a time. The whole idea behind this construction is that
 More frequently occurring items will have better chances of sharing items
 We then mine the tree recursively to get the frequent pattern. Pattern growth, the name of the algorithm, is achieved by concatenating the frequent pattern generated from the conditional FP trees.
 
-![shortcomings](images/Slide8.PNG)
-![shortcomings](images/Slide9.PNG)
-![shortcomings](images/Slide10.PNG)
-![shortcomings](images/Slide11.PNG)
-![shortcomings](images/Slide12.PNG)
-![shortcomings](images/Slide13.PNG)
-![shortcomings](images/Slide14.PNG)
+### Analysis
+
+![analysis](images/Slide14.PNG)
+
+![analysis](images/Slide15.PNG)
+
+![analysis](images/Slide16.PNG)
+
+![analysis](images/Slide18.PNG)
+
+![analysis](images/Slide19.PNG)
+
+![analysis](images/Slide20.PNG)
+
+![analysis](images/Slide21.PNG)
+
+![analysis](images/Slide22.PNG)
+
+![analysis](images/Slide23.PNG)
 
