@@ -18,7 +18,7 @@ All non-empty subsets of a frequent itemset must also be frequent.
 
 All the problems of Apriori can be solved by leveraging the FP tree. To be more specific, the itemset size will not be a problem anymore since all the data will be stored in a way more compact version. Moreover, there’s no need to scan the database over and over again. Instead, traversing the FP tree could do the same job more efficiently.
 
-## Introduction to FP-Growth
+# Introduction to FP-Growth
 
 ![fp_growth](images/Slide6.PNG)
 
@@ -32,7 +32,7 @@ The tree is constructed by taking each itemset and mapping it to a path in the t
 More frequently occurring items will have better chances of sharing items
 We then mine the tree recursively to get the frequent pattern. Pattern growth, the name of the algorithm, is achieved by concatenating the frequent pattern generated from the conditional FP trees.
 
-### Analysis
+## Analysis
 
 ![analysis](images/Slide14.PNG)
 
